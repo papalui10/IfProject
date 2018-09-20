@@ -10,10 +10,20 @@ public class Computers
 	//boolean => false
 	//Objects => null!!!
 	
-	private String brand;
+	private String brandName;
 	private int price;
 	private String games;
 	
-	public 
+	public Computers()
+	{
+		//default constructor 
+	}
+	
+	public Computers(String brandName, int price, String games)
+	{
+		this.brandName = brandName;
+		this.price = price;
+		this.games = games;
+	}
 
 }
