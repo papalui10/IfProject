@@ -14,6 +14,11 @@ public class Computers
 	private int price;
 	private String games;
 	
+	/**
+	 * Default constructor for a Computer.
+	 * Initializes all values to valid but "bad" values
+	 * Used for later customization. 
+	 */
 	public Computers()
 	{
 		//default constructor 
@@ -21,9 +26,43 @@ public class Computers
 	
 	public Computers(String brandName, int price, String games)
 	{
+		this.brandName = "unnamed brand";
+		this.price = -99;
+		this.games = "unnamed games";
+	}
+	/**
+	 * Initializes a Computer instance with a value for the brandName
+	 * @param brandName The brandName of the Computer.
+	 */
+	public String getBrandName()
+	{
+		return brandName;
+	}
+	
+	public int getPrice()
+	{
+		return price;
+	}
+	
+	public String getGames()
+	{
+		return games;
+	}
+	
+	public void setBrandName(String brandName)
+	{
 		this.brandName = brandName;
+	}
+	
+	public void setPrice(int price)
+	{
 		this.price = price;
+	}
+	
+	public void setGames(String games)
+	{
 		this.games = games;
 	}
-
-}
+}	
+	
+	
