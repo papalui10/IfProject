@@ -21,7 +21,9 @@ public class Ifcontroller
 	 */
 	public void start()
 	{
-		String userInput = JOptionPane.showInputDialog("Enter your favorite computer brand");
+		/*
+		 * String userInput = JOptionPane.showInputDialog("Enter your favorite computer brand");
+		 
 		userComputer.setBrandName(userInput);
 		
 		userInput = JOptionPane.showInputDialog("Enter your price");
@@ -38,6 +40,9 @@ public class Ifcontroller
 		JOptionPane.showMessageDialog(null, "Your favorite computer brand is" + userComputer.getBrandName() + "!");
 		JOptionPane.showMessageDialog(null, "Your budget is" + userComputer.getPrice() + "!");
 		JOptionPane.showMessageDialog(null, "Your games are" + userComputer.getGames());
+		*/
+	loopy();
+	
 	}
 	
 	public boolean validInt(String maybeInt)
@@ -56,4 +61,60 @@ public class Ifcontroller
 		
 		return isValid;
 	}
+	public boolean validDouble(String mightBeDouble)
+	{
+		boolean isValid = false;
+		
+		try
+		{
+			Double.parseDouble(mightBeDouble);
+			isValid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null,  "type in a decimal value AKA a number with a . in the middle");
+		}
+		
+		return isValid;
+	}
+	
+	private void loopy()
+	{
+		//define a variable before the loop
+		boolean isFinished = false;
+		int someCount = 7;
+		Computers userComputer = new Computers();
+		
+		//test the code
+		while (!isFinished)
+		{
+			
+			//do code
+			JOptionPane.showMessageDialog(null, "Virus Detected!");
+			
+			someCount++;
+			//someCount+= 1;
+			
+			//Update the test variable
+			if (someCount >= 20)
+			{
+				isFinished = true;
+			}
+		}		
+		
+		
+		String response = JOptionPane.showInputDialog(null, "What is the price of your PC?");
+		while(!validDouble(response))
+		{
+			response = JOptionPane.showInputDialog(null, "Nice");
+		}
+		userComputer.setPrice(Double.parseDouble(response));
+		
+		for (int index = 0; index < 10; index++)
+		{
+			if(isFinished)
+			JOptionPane.showMessageDialog(null, "This is execution number " + index);
+		}
+	}
+
 }

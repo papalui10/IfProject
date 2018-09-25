@@ -11,7 +11,7 @@ public class Computers
 	//Objects => null!!!
 	
 	private String brandName;
-	private int price;
+	private double price;
 	private String games;
 	
 	/**
@@ -24,7 +24,7 @@ public class Computers
 		//default constructor 
 	}
 	
-	public Computers(String brandName, int price, String games)
+	public Computers(String brandName, double price, String games)
 	{
 		this.brandName = "unnamed brand";
 		this.price = -99;
@@ -39,7 +39,7 @@ public class Computers
 		return brandName;
 	}
 	
-	public int getPrice()
+	public double getPrice()
 	{
 		return price;
 	}
@@ -54,7 +54,7 @@ public class Computers
 		this.brandName = brandName;
 	}
 	
-	public void setPrice(int price)
+	public void setPrice(double price)
 	{
 		this.price = price;
 	}
