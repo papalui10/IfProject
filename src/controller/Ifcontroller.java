@@ -104,17 +104,41 @@ public class Ifcontroller
 		
 		
 		String response = JOptionPane.showInputDialog(null, "What is the price of your PC?");
-		while(!validDouble(response))
+		double price = -99;
+		boolean isValid = validDouble(response);
+		while(!isValid)
 		{
-			response = JOptionPane.showInputDialog(null, "Nice");
+			response = JOptionPane.showInputDialog(null, "What is the price of your PC?");
+			if(validDouble(response))
+			{
+				price = Double.parseDouble(response);
+				isValid = true;
+			}
+			
 		}
 		userComputer.setPrice(Double.parseDouble(response));
 		
-		for (int index = 0; index < 10; index++)
+		for (double time = 0; time < 10; time++)
 		{
 			if(isFinished)
-			JOptionPane.showMessageDialog(null, "This is execution number " + index);
+			JOptionPane.showMessageDialog(null, "This is the end of the world " + time);
+				
 		}
+		response = JOptionPane.showInputDialog(null, "Enter desired FPS");
+		double FPS = -99;
+		boolean isValid2 = validDouble(response);
+		while(!isValid2)
+		{
+			response = JOptionPane.showInputDialog(null, "Enter desired FPS");
+			if(validDouble(response))
+			{
+				FPS = Double.parseDouble(response);
+				isValid2 = true;
+			}
+		}
+		userComputer.setFPS(Double.parseDouble(response));
+		
+		response = JOptionPane.showInputDialog("Enter your favorite PC brand?");
+		userComputer.setBrandName(response);
 	}
-
 }

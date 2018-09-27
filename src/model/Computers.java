@@ -13,7 +13,7 @@ public class Computers
 	private String brandName;
 	private double price;
 	private String games;
-	
+	private double FPS;
 	/**
 	 * Default constructor for a Computer.
 	 * Initializes all values to valid but "bad" values
@@ -29,6 +29,7 @@ public class Computers
 		this.brandName = "unnamed brand";
 		this.price = -99;
 		this.games = "unnamed games";
+		this.FPS = -99;
 	}
 	/**
 	 * Initializes a Computer instance with a value for the brandName
@@ -49,6 +50,11 @@ public class Computers
 		return games;
 	}
 	
+	public double getFPS()
+	{
+		return FPS;
+	}
+	
 	public void setBrandName(String brandName)
 	{
 		this.brandName = brandName;
@@ -62,6 +68,11 @@ public class Computers
 	public void setGames(String games)
 	{
 		this.games = games;
+	}
+	
+	public void setFPS(double FPS)
+	{
+		this.FPS = FPS;
 	}
 }	
 	
