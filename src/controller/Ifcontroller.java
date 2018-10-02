@@ -41,9 +41,63 @@ public class Ifcontroller
 		JOptionPane.showMessageDialog(null, "Your budget is" + userComputer.getPrice() + "!");
 		JOptionPane.showMessageDialog(null, "Your games are" + userComputer.getGames());
 		*/
-	loopy();
-	
+	loopy2();
+	/*
+	for (int loop = 0; loop <= 3; loop +=1)
+	{
+		askUser();
+		JOptionPane.showMessageDialog(null, "This is PC number " + loop);
 	}
+	*/
+}
+	
+	private void askUser()
+	{	
+
+
+String response = JOptionPane.showInputDialog(null, "What is the price of your PC?");
+double price = -99;
+boolean isValid = validDouble(response);
+while(!isValid)
+{
+	response = JOptionPane.showInputDialog(null, "What is the price of your PC?");
+	if(validDouble(response))
+	{
+		price = Double.parseDouble(response);
+		isValid = true;
+	}
+	
+}
+userComputer.setPrice(Double.parseDouble(response));
+
+
+/**for (double time = 0; time < 10; time++)
+{
+	if(isFinished)
+	JOptionPane.showMessageDialog(null, "This is the end of the world " + time);
+		
+}
+*/
+response = JOptionPane.showInputDialog(null, "Enter desired FPS");
+double FPS = -99;
+boolean isValid2 = validDouble(response);
+while(!isValid2)
+{
+	response = JOptionPane.showInputDialog(null, "Enter desired FPS");
+	if(validDouble(response))
+	{
+		FPS = Double.parseDouble(response);
+		isValid2 = true;
+	}
+}
+userComputer.setFPS(Double.parseDouble(response));
+
+response = JOptionPane.showInputDialog("Enter your favorite PC brand?");
+userComputer.setBrandName(response);
+
+JOptionPane.showMessageDialog(null, userComputer);
+}
+	
 	
 	public boolean validInt(String maybeInt)
 	{
@@ -141,4 +195,26 @@ public class Ifcontroller
 		response = JOptionPane.showInputDialog("Enter your favorite PC brand?");
 		userComputer.setBrandName(response);
 	}
+	
+	private void loopy2()
+	{
+		boolean correct = false;
+		while(!correct)
+		{	
+		String response = JOptionPane.showInputDialog(null, "Who is the farest of them all?");
+		String correctAnswer = "Taco Girl";
+		
+		if(response.equals(correctAnswer))
+		{
+			JOptionPane.showMessageDialog(null, "Correct");
+			correct = true;
+		}
+		else if(response != correctAnswer)
+		{
+			JOptionPane.showMessageDialog(null, "Wrong you dumb dumb it's " + correctAnswer);
+		}
+		}
+		
+	}
 }
+	//use for loop that calls input method at least 3 times

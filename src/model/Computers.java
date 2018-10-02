@@ -12,7 +12,6 @@ public class Computers
 	
 	private String brandName;
 	private double price;
-	private String games;
 	private double FPS;
 	/**
 	 * Default constructor for a Computer.
@@ -28,7 +27,6 @@ public class Computers
 	{
 		this.brandName = "unnamed brand";
 		this.price = -99;
-		this.games = "unnamed games";
 		this.FPS = -99;
 	}
 	/**
@@ -43,11 +41,6 @@ public class Computers
 	public double getPrice()
 	{
 		return price;
-	}
-	
-	public String getGames()
-	{
-		return games;
 	}
 	
 	public double getFPS()
@@ -65,15 +58,20 @@ public class Computers
 		this.price = price;
 	}
 	
-	public void setGames(String games)
-	{
-		this.games = games;
-	}
-	
 	public void setFPS(double FPS)
 	{
 		this.FPS = FPS;
 	}
-}	
+	
+	public String toString()
+	{
+		String description = "Your favorite brand is " + brandName
+				+ " and your pc price is " + price + "$"
+				+ " your pc FPS is " + FPS;
+		
+		return description;
+	}
+}
+		
 	
 	
